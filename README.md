@@ -1,5 +1,42 @@
 # low-level-design-with-NodeJS
 
+### 01.Basics of Low Level Design
+  * Introduction to Object-Oriented Programming
+      1. Class & Objects, Encapsulation, Inheritance, Abstraction, Polymorphism
+      2. Operator overloading, Association, Aggregation, and Composition
+      3. Class diagram as a Visual Tool
+      4. Procedural vs OO Programming
+### 02 Understanding Constructors
+      * Default and Parameterized Constructor
+      * Copy Constructor
+      * this Keyword and Operations 
+### 03 What are UML Diagrams & Types
+      * Introduction to UML & Object Diagram
+      * Activity Diagram, Sequence Diagram
+      * State Diagram
+### 04Learning Core Design Principle
+      * SOLID & GRASP
+      * DRY & KISS
+### 05Advance LLD & Use Cases
+      * What are SOLID principles?
+        1. Single Responsibility & Open/Closed Principle
+        2. Liskov Substitution & Interface Segregation Principle
+        3. Dependency Inversion
+### 06Understanding various Design Patterns
+  * Strategy Pattern
+  * Observer Pattern
+  * Factory Pattern
+  * Abstract Factory Pattern
+  * Singleton Pattern
+  * Command Pattern
+  * Proxy Pattern
+  * Bridge Pattern
+  * Template method Pattern
+  * Composite Pattern
+  * Iterator Pattern
+### 07Case Studies & Contests
+  * Movie Ticket Booking System
+  * Airline Booking System
 ### 🚀 **Phases & Timeline**
 
 1️⃣ **Beginner Basics (1 week)**
@@ -23,18 +60,7 @@
 4️⃣ **Advanced & Pro Level (3 weeks)**
 
 * **Topics:** Handling edge cases, scalability, trade-offs, advanced patterns (like CQRS, event sourcing), performance considerations
-#####  Design Patterns
-* Strategy Pattern
-* Observer Pattern
-* Factory Pattern
-* Abstract Factory Pattern
-* Singleton Pattern
-* Command Pattern
-* Proxy Pattern
-* Bridge Pattern
-* Template method Pattern
-* Composite Pattern
-* Iterator Pattern
+  design patterns
   
 * **Goal:** Design complex systems like Netflix, WhatsApp, payment gateways
 
@@ -105,6 +131,7 @@ Here’s an example for **Week 1**:
 ✅ **Iterate** — redesign the same system multiple times to find better solutions
 
 ---
+### Tracker:-
 
 [LLD_Roadmap.xlsx](https://github.com/user-attachments/files/20463160/LLD_Roadmap.xlsx)
 
