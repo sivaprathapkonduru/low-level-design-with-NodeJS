@@ -15,7 +15,7 @@
       * Activity Diagram, Sequence Diagram
       * State Diagram
 
-      ##### UML Diagrams 
+##### UML Diagrams 
 ![image](https://github.com/user-attachments/assets/9bfbf65f-c779-4970-b726-3bc202773ff4)
 ### 04Learning Core Design Principle
       * SOLID & GRASP
