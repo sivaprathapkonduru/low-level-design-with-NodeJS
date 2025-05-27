@@ -23,6 +23,19 @@
 4️⃣ **Advanced & Pro Level (3 weeks)**
 
 * **Topics:** Handling edge cases, scalability, trade-offs, advanced patterns (like CQRS, event sourcing), performance considerations
+#####  Design Patterns
+* Strategy Pattern
+* Observer Pattern
+* Factory Pattern
+* Abstract Factory Pattern
+* Singleton Pattern
+* Command Pattern
+* Proxy Pattern
+* Bridge Pattern
+* Template method Pattern
+* Composite Pattern
+* Iterator Pattern
+  
 * **Goal:** Design complex systems like Netflix, WhatsApp, payment gateways
 
 ---
