@@ -1,11 +1,11 @@
 # low-level-design-with-NodeJS
 
 ### 01.Basics of Low Level Design
-  * Introduction to Object-Oriented Programming
-      1. Class & Objects, Encapsulation, Inheritance, Abstraction, Polymorphism
-      2. Operator overloading, Association, Aggregation, and Composition
-      3. Class diagram as a Visual Tool
-      4. Procedural vs OO Programming
+     * Introduction to Object-Oriented Programming
+         1. Class & Objects, Encapsulation, Inheritance, Abstraction, Polymorphism
+         2. Operator overloading, Association, Aggregation, and Composition
+         3. Class diagram as a Visual Tool
+         4. Procedural vs OO Programming
 ### 02 Understanding Constructors
       * Default and Parameterized Constructor
       * Copy Constructor
@@ -23,20 +23,20 @@
         2. Liskov Substitution & Interface Segregation Principle
         3. Dependency Inversion
 ### 06Understanding various Design Patterns
-  * Strategy Pattern
-  * Observer Pattern
-  * Factory Pattern
-  * Abstract Factory Pattern
-  * Singleton Pattern
-  * Command Pattern
-  * Proxy Pattern
-  * Bridge Pattern
-  * Template method Pattern
-  * Composite Pattern
-  * Iterator Pattern
+      * Strategy Pattern
+      * Observer Pattern
+      * Factory Pattern
+      * Abstract Factory Pattern
+      * Singleton Pattern
+      * Command Pattern
+      * Proxy Pattern
+      * Bridge Pattern
+      * Template method Pattern
+      * Composite Pattern
+      * Iterator Pattern
 ### 07Case Studies & Contests
-  * Movie Ticket Booking System
-  * Airline Booking System
+      * Movie Ticket Booking System
+      * Airline Booking System
 ### 🚀 **Phases & Timeline**
 
 1️⃣ **Beginner Basics (1 week)**
