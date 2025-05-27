@@ -7,6 +7,9 @@
 * **Topics:** OOP concepts, UML basics, SOLID principles, system thinking
 * **Goal:** Understand core concepts and notations
 
+#### UML Diagrams 
+![image](https://github.com/user-attachments/assets/9bfbf65f-c779-4970-b726-3bc202773ff4)
+
 2️⃣ **Intermediate LLD (2 weeks)**
 
 * **Topics:** Class diagrams, sequence diagrams, state diagrams, design patterns
