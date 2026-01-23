@@ -1,10 +1,10 @@
 # low-level-design-with-NodeJS
 
-### 01.Basics of Low Level Design
+### 01.Basics of Low-Level Design
      * Introduction to Object-Oriented Programming
          1. Class & Objects, Encapsulation, Inheritance, Abstraction, Polymorphism
-         2. Operator overloading, Association, Aggregation, and Composition
-         3. Class diagram as a Visual Tool
+         2. Operator Overloading, Association, Aggregation, and Composition
+         3. Class Diagram as a Visual Tool
          4. Procedural vs OO Programming
 ### 02 Understanding Constructors
       * Default and Parameterized Constructor
@@ -34,7 +34,7 @@
       * Command Pattern
       * Proxy Pattern
       * Bridge Pattern
-      * Template method Pattern
+      * Template Method Pattern
       * Composite Pattern
       * Iterator Pattern
 ### 07Case Studies & Contests
@@ -62,7 +62,7 @@
 * **Topics:** Handling edge cases, scalability, trade-offs, advanced patterns (like CQRS, event sourcing), performance considerations
   design patterns
   
-* **Goal:** Design complex systems like Netflix, WhatsApp, payment gateways
+* **Goal:** Design complex systems like Netflix, WhatsApp, and payment gateways
 
 ---
 
@@ -136,41 +136,41 @@ Here’s an example for **Week 1**:
 [LLD_Roadmap.xlsx](https://github.com/user-attachments/files/20463160/LLD_Roadmap.xlsx)
 
 
-Creational Design Patterns (Object Creation): 
-These patterns deal with object creation mechanisms, increasing flexibility and reuse. 
-Abstract Factory: Creates families of related objects.
-Builder: Constructs complex objects step-by-step.
-Factory Method: Creates objects without specifying the exact class.
-Prototype: Creates new objects by cloning an existing one.
-Singleton: Ensures a class has only one instance.
-Object Pool: Reuses objects to avoid expensive creation. 
-Structural Design Patterns (Object Composition)
+### Creational Design Patterns (Object Creation): 
+* These patterns deal with object creation mechanisms, increasing flexibility and reuse. 
+* Abstract Factory: Creates families of related objects.
+*  Builder: Constructs complex objects step-by-step.
+* Factory Method: Creates objects without specifying the exact class.
+* Prototype: Creates new objects by cloning an existing one.
+* Singleton: Ensures a class has only one instance.
+* Object Pool: Reuses objects to avoid expensive creation. 
+* Structural Design Patterns (Object Composition)
 
-These patterns explain how to assemble objects and classes into larger structures. 
-Adapter: Allows incompatible interfaces to work together.
-Bridge: Decouples abstraction from implementation.
-Composite: Composes objects into tree structures.
-Decorator: Dynamically adds responsibilities to objects.
-Facade: Provides a simplified interface to a complex system.
-Flyweight: Minimizes memory usage by sharing data.
-Proxy: Provides a placeholder to control access to an object. 
-Behavioral Design Patterns (Object Communication) 
+### These patterns explain how to assemble objects and classes into larger structures. 
+* Adapter: Allows incompatible interfaces to work together.
+* Bridge: Decouples abstraction from implementation.
+* Composite: Composes objects into tree structures.
+* Decorator: Dynamically adds responsibilities to objects.
+* Facade: Provides a simplified interface to a complex system.
+* Flyweight: Minimizes memory usage by sharing data.
+* Proxy: Provides a placeholder to control access to an object. 
+* Behavioral Design Patterns (Object Communication) 
 
-These patterns manage algorithms, relationships, and responsibilities between objects. 
-Chain of Responsibility: Passes requests along a chain of handlers.
-Command: Turns a request into a stand-alone object.
-Interpreter: Implements a specialized language.
-Iterator: Accesses elements of a collection sequentially.
-Mediator: Reduces dependencies between communicating objects.
-Memento: Captures and restores an object's internal state.
-Observer: Notifies multiple objects about events.
-State: Allows an object to change behavior when its state changes.
-Strategy: Encapsulates an algorithm inside a class.
-Template Method: Defines the skeleton of an algorithm.
-Visitor: Separates algorithms from the objects they operate on. 
+### These patterns manage algorithms, relationships, and responsibilities between objects. 
+* Chain of Responsibility: Passes requests along a chain of handlers.
+* Command: Turns a request into a stand-alone object.
+* Interpreter: Implements a specialized language.
+* Iterator: Accesses elements of a collection sequentially.
+* Mediator: Reduces dependencies between communicating objects.
+* Memento: Captures and restores an object's internal state.
+* Observer: Notifies multiple objects about events.
+* State: Allows an object to change behavior when its state changes.
+* Strategy: Encapsulates an algorithm inside a class.
+* Template Method: Defines the skeleton of an algorithm.
+* Visitor: Separates algorithms from the objects they operate on. 
 
-Other Patterns:-
-Dependency Injection: A pattern for achieving Inversion of Control.
-Intercepting Filter: Pre- or post-process requests.
-Lazy Initialization: Delays object creation until needed.
-MVC (Model-View-Controller): Architectural pattern. 
+### Other Patterns:-
+* Dependency Injection: A pattern for achieving Inversion of Control.
+* Intercepting Filter: Pre- or post-process requests.
+* Lazy Initialization: Delays object creation until needed.
+* MVC (Model-View-Controller): Architectural pattern. 
