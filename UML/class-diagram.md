@@ -19,9 +19,11 @@
 ## 🏗 2. Basic Structure of a Class
 
 #### Diagram for shapes
+
 ![class diagram for shapes](https://cdn-images.visual-paradigm.com/guide/uml/uml-class-diagram-tutorial/18-uml-class-diagram-example-gui.png)
 
 #### Diagram for pet adoption
+
 ![pet adopt image](https://substackcdn.com/image/fetch/%24s_%21lMAf%21%2Cf_auto%2Cq_auto%3Agood%2Cfl_progressive%3Asteep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F72d3654b-44b5-4708-a634-527534bd0937_3772x3040.png)
 
 ### Format:
@@ -140,9 +142,12 @@ Represents blueprint of objects
 
 ### 🔹 5. Relationships (MOST IMPORTANT)
 ## 🔗 Types of Relationships
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1681758292817/626beabf-0a36-42c8-beff-d163c30de8a7.png)
 ![](https://miro.medium.com/v2/0*OcXwbrcD2oInENr6.jpg)
+
 ### 1️⃣ Association
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20250828094904229784/file.webp)
 
 👉 Simple connection
@@ -208,10 +213,13 @@ and **that item is also connected to only one in return**.
 It is represented using an arrow(⇢,⇠)(There can be many notations possible for the ER diagram).
 
 **Example:**
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101160601/Untitleddrawing26-660x131.png)
+
 In this ER diagram, both entities customer and driving license having an arrow which means the entity Customer is participating in the relation "has a" in a one-to-one fashion. It could be read as 'Each customer has exactly one driving license and every driving license is associated with exactly one customer.
 
 **The set-theoretic perspective of the ER diagram is**
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101160618/Untitleddrawing27-300x208.png)
 
 There may be customers who do not have a credit card, but every credit card is associated with exactly one customer. Therefore, the entity customer has total participation in a relation.
@@ -350,10 +358,13 @@ One object is related to many objects
 but each of those **many items is connected to only that one**.
 
 **Example:**
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101160634/Untitleddrawing31-660x255.png)
+
 This relationship is one to many because "There are some employees who manage more than one team while there is only one manager to manage a team".
 
 **The set-theoretic perspective of the ER diagram is:**
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101161342/Untitleddrawing28300x225-200x150.png)
 
 #### Code:-
@@ -624,6 +635,7 @@ and **One entity** in the second set can also be related to **many entities** in
 A customer can buy any number of products and a product can be bought by many customers. 
 
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101161515/Untitleddrawing34-660x260-(1).png)
+
 The set-theoretic perspective of the ER diagram is:
 
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101161533/Untitleddrawing30-300x223-(1).png)
@@ -765,6 +777,7 @@ user_roles</pre>
 > 👉 M:N = Needs third class ALWAYS
 
 ### 3️⃣ Aggregation (Weak HAS-A)
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20190930035513/Aggregation.jpeg)
 
 👉 Whole–part (independent)
@@ -781,6 +794,7 @@ class FoodPlatform {
 ✔ Restaurants exist independently → aggregation
 
 ### 4️⃣ Composition (Strong HAS-A)
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20190930035511/Aggregation-1.jpeg)
 
 👉 Strong ownership
@@ -861,7 +875,9 @@ class DeliveryPartner extends User {
 </pre>
 
 ### 6️⃣ Dependency
+
 ![](https://miro.medium.com/v2/0*OcXwbrcD2oInENr6.jpg)
+
 👉 Uses temporarily
 
 > OrderService → PaymentService
@@ -893,7 +909,9 @@ class OrderService {
 </pre>
 
 ### 7️⃣ Realization
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20250829165046859312/realization.webp)
+
 👉 Interface implementation
 
 > Payment → PaymentMethod
@@ -936,6 +954,7 @@ Student --- Enrollment --- Course</pre>
 👉 Reduce many-to-many
 
 ### 🔹 Enumeration 
+
 ![](https://www.softwareideas.net/i/DirectImage/1685/an-enumeration-associated-with-a-class-uml-class-diagram-)
 
 <pre>enum OrderStatus {
