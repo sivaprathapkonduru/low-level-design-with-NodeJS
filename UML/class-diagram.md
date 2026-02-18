@@ -190,6 +190,18 @@ class Restaurant {
 | `m..n` | A specific range | A Player in a game has 3 to 5 Lives.|
 
 #### 1. One to one relationship (1:1)
+#### 🧠 What is 1:1 Association?
+
+One object is related to exactly one other object
+
+**Examples:**
+
+- User ↔ Profile
+
+- Person ↔ Passport
+
+- Student ↔ IDCard
+
 **One item** is connected to **only one other item**,
 and **that item is also connected to only one in return**.
 
@@ -204,7 +216,136 @@ In this ER diagram, both entities customer and driving license having an arrow w
 
 There may be customers who do not have a credit card, but every credit card is associated with exactly one customer. Therefore, the entity customer has total participation in a relation.
 
+#### Code:- (User ↔ Profile)
+
+👉 Pure association (both exist independently)
+
+<pre>
+class Profile {
+  constructor(
+    public bio: string,
+    public avatar: string
+  ) {}
+}
+
+class User {
+  constructor(
+    public id: string,
+    public name: string,
+    public profile: Profile // 1:1 association
+  ) {}
+}
+
+// usage
+const profile = new Profile("Developer", "avatar.png");
+const user = new User("u1", "Siva", profile);
+</pre>
+
+✔ One user → one profile
+
+✔ Profile can exist independently
+
+#### Bidirectional 1:1 (Both know each other)
+<pre>
+class User {
+  public profile!: Profile;
+
+  constructor(public id: string) {}
+}
+
+class Profile {
+  constructor(
+    public bio: string,
+    public user: User
+  ) {}
+}
+
+// linking
+const user = new User("u1");
+const profile = new Profile("Developer", user);
+
+user.profile = profile;
+</pre>
+
+✔ Both sides reference each other
+
+✔ Used in ORM (TypeORM, Prisma)
+
+#### Optional 1:1 (0..1)
+
+👉 User MAY have profile
+<pre>
+class Profile {
+  constructor(public bio: string) {}
+}
+
+class User {
+  constructor(
+    public id: string,
+    public profile?: Profile // optional
+  ) {}
+}
+
+const user = new User("u1"); // no profile yet
+</pre>
+
+✔ UML: 0..1
+
+#### Strong Ownership (Composition 1:1)
+
+👉 Profile cannot exist without User
+<pre>
+class Profile {
+  constructor(public bio: string) {}
+}
+
+class User {
+  public profile: Profile;
+
+  constructor(public id: string, bio: string) {
+    this.profile = new Profile(bio); // created inside
+  }
+}
+</pre>
+
+✔ Strong lifecycle dependency
+
+✔ UML → Composition (filled diamond)
+
+#### Real-World Example (Passport System)
+<pre>
+class Passport {
+  constructor(
+    public number: string,
+    public country: string
+  ) {}
+}
+
+class Person {
+  constructor(
+    public name: string,
+    public passport: Passport // 1:1
+  ) {}
+}
+
+// usage
+const passport = new Passport("A12345", "India");
+const person = new Person("Siva", passport);
+</pre>
 #### 2. One to many relationship (1:M)
+
+#### 🧠 What is 1 : M?
+
+One object is related to many objects
+
+**Examples:**
+
+- User → Orders
+
+- Customer → Addresses
+
+- Restaurant → MenuItems
+
 **One item** is connected to **many items**,
 but each of those **many items is connected to only that one**.
 
@@ -215,7 +356,136 @@ This relationship is one to many because "There are some employees who manage mo
 **The set-theoretic perspective of the ER diagram is:**
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101161342/Untitleddrawing28300x225-200x150.png)
 
+#### Code:-
+#### Basic Example (User → Orders)
+
+👉 One User can have many Orders
+<pre>
+class Order {
+  constructor(public id: string) {}
+}
+
+class User {
+  public orders: Order[] = []; // 1:M
+
+  constructor(public id: string, public name: string) {}
+
+  addOrder(order: Order) {
+    this.orders.push(order);
+  }
+}
+
+// usage
+const user = new User("u1", "Siva");
+
+user.addOrder(new Order("o1"));
+user.addOrder(new Order("o2"));
+</pre>
+
+✔ One user → many orders
+
+✔ Orders exist independently
+
+#### Bidirectional (1:M + M:1)
+
+👉 Real-world systems usually use both sides
+<pre>
+class User {
+  public orders: Order[] = [];
+
+  constructor(public id: string) {}
+
+  addOrder(order: Order) {
+    this.orders.push(order);
+    order.user = this; // link both sides
+  }
+}
+
+class Order {
+  public user!: User;
+
+  constructor(public id: string) {}
+}
+</pre>
+
+✔ User knows orders
+
+✔ Order knows user
+
+#### Optional (0..*)
+
+👉 User may have zero or many orders
+<pre>
+class User {
+  public orders: Order[] = []; // 0..*
+}
+</pre>
+
+✔ Default case in most systems
+
+#### Strong Ownership (Composition 1:M)
+
+👉 OrderItems belong to Order
+<pre>
+class OrderItem {
+  constructor(public name: string) {}
+}
+
+class Order {
+  private items: OrderItem[] = [];
+
+  addItem(name: string) {
+    const item = new OrderItem(name); // created inside
+    this.items.push(item);
+  }
+}
+</pre>
+
+✔ Items cannot exist without Order
+
+✔ Composition + 1:M
+
+#### Real Example (E-commerce)
+<pre>
+class Product {
+  constructor(public name: string, public price: number) {}
+}
+
+class OrderItem {
+  constructor(
+    public product: Product,
+    public quantity: number
+  ) {}
+}
+
+class Order {
+  public items: OrderItem[] = []; // 1:M
+
+  addItem(product: Product, quantity: number) {
+    this.items.push(new OrderItem(product, quantity));
+  }
+}</pre>
+
+#### Direction matters:
+| Direction |	Meaning |
+| ----- | ----- |
+| 1 → M |	Parent holds array |
+| M → 1 |	Child holds reference |
+| Both |	Bidirectional |
+
 #### 3. Many to one relationship (M:1)
+#### 🧠 What is M : 1?
+
+Many objects are related to one object
+
+**Examples:**
+
+- Many Orders → One User
+
+- Many Employees → One Department
+
+- Many Products → One Category
+
 **Many items** from one group are connected to **just one item in another group**.
 
 **Example:**
@@ -230,7 +500,122 @@ This is a **one-to-many** relationship, but the difference comes from who must p
 
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101161414/Untitleddrawing29-300x221.png)
 
+#### Code:-
+#### Basic Example (Order → User)
+
+👉 Many Orders belong to ONE User
+
+<pre>class User {
+  constructor(public id: string, public name: string) {}
+}
+
+class Order {
+  constructor(
+    public id: string,
+    public user: User // M:1
+  ) {}
+}
+
+// usage
+const user = new User("u1", "Siva");
+
+const order1 = new Order("o1", user);
+const order2 = new Order("o2", user);
+</pre>
+
+✔ Many orders → same user
+
+✔ Order holds reference
+
+#### Bidirectional (Best Practice)
+
+👉 Combine with 1:M
+
+<pre>class User {
+  public orders: Order[] = [];
+
+  constructor(public id: string) {}
+
+  addOrder(order: Order) {
+    this.orders.push(order);
+    order.user = this;
+  }
+}
+
+class Order {
+  public user!: User;
+
+  constructor(public id: string) {}
+}
+</pre>
+
+✔ User → orders (1:M)
+
+✔ Order → user (M:1)
+
+👉 This is how real systems work
+
+#### Optional (0..1)
+
+👉 Order MAY have user (rare but possible)
+
+<pre>class Order {
+  constructor(
+    public id: string,
+    public user?: User // optional
+  ) {}
+}
+</pre>
+
+✔ UML: 0..1
+
+#### Real Example (Company)
+<pre>class Department {
+  constructor(public name: string) {}
+}
+
+class Employee {
+  constructor(
+    public name: string,
+    public department: Department // M:1
+  ) {}
+}
+
+// usage
+const dept = new Department("Engineering");
+
+const emp1 = new Employee("A", dept);
+const emp2 = new Employee("B", dept);
+</pre>
+
+✔ Many employees → one department
+
+#### Real Example (E-commerce — your domain)
+<pre>class User {
+  constructor(public id: string) {}
+}
+
+class Order {
+  constructor(
+    public id: string,
+    public user: User // M:1
+  ) {}
+}
+</pre>
+
 ### 4. Many to many relationship (M:N)
+#### 🧠 What is M : N?
+
+>Many objects relate to many objects
+
+**Examples:**
+
+- Students ↔ Courses
+
+- Orders ↔ Products
+
+- Users ↔ Roles
+
 **One entity** in the first set can be related to **many entities** in the second set,
 and **One entity** in the second set can also be related to **many entities** in the first set.
 
@@ -244,6 +629,140 @@ The set-theoretic perspective of the ER diagram is:
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20231101161533/Untitleddrawing30-300x223-(1).png)
 
 Any of the four cardinalities of a binary relationship can have both sides partial, both total, and one partial, and one total participation, depending on the constraints specified by user requirements.
+
+#### Code:- 
+#### ❌ WRONG WAY (Beginner Mistake)
+<pre>class Student {
+  courses: Course[] = [];
+}
+
+class Course {
+  students: Student[] = [];
+}
+</pre>
+
+👉 Looks correct but ❌ NOT scalable
+
+👉 You cannot store extra data (marks, enrollment date)
+
+#### ✅ CORRECT WAY (Senior Approach)
+
+> 👉 Use JOIN CLASS (Association Class)
+
+##### Example (Student ↔ Course)
+<pre>class Student {
+  constructor(public id: string, public name: string) {}
+}
+
+class Course {
+  constructor(public id: string, public title: string) {}
+}</pre>
+
+##### // 🔥 JOIN CLASS
+<pre>class Enrollment {
+  constructor(
+    public student: Student,
+    public course: Course,
+    public enrolledAt: Date,
+    public marks?: number
+  ) {}
+}
+</pre>
+
+✔ This represents M:N properly
+
+✔ You can store extra attributes
+
+#### Real Example (E-commerce — Order ↔ Product)
+<pre>class Product {
+  constructor(
+    public id: string,
+    public name: string,
+    public price: number
+  ) {}
+}
+
+class Order {
+  public items: OrderItem[] = [];
+
+  constructor(public id: string) {}
+
+  addProduct(product: Product, quantity: number) {
+    this.items.push(new OrderItem(this, product, quantity));
+  }
+}</pre>
+
+##### // 🔥 JOIN ENTITY
+<pre>class OrderItem {
+  constructor(
+    public order: Order,
+    public product: Product,
+    public quantity: number
+  ) {}
+
+  getTotal(): number {
+    return this.product.price * this.quantity;
+  }
+}
+</pre>
+
+✔ Order ↔ Product = M:N
+
+✔ OrderItem resolves it
+
+#### 🧠 Why JOIN CLASS is IMPORTANT
+
+Because in real systems you need:
+
+| Scenario |	Example |
+| ------- | ------ |
+| Extra data |	quantity, price |
+| Tracking |	timestamps |
+| Business logic |	discounts |
+
+> 👉 Direct M:N cannot handle this ❌
+
+#### Real Example (User ↔ Role)
+<pre>class User {
+  constructor(public id: string) {}
+}
+
+class Role {
+  constructor(public name: string) {}
+}
+
+class UserRole {
+  constructor(
+    public user: User,
+    public role: Role,
+    public assignedAt: Date
+  ) {}
+}</pre>
+
+##### 🧠 DB Mapping (VERY IMPORTANT)
+<pre>User
+Role
+UserRole (JOIN TABLE)</pre>
+
+##### 👉 Same as:
+
+<pre>order_items
+enrollments
+user_roles</pre>
+
+#### ⚠️ Common Mistakes
+
+❌ Direct array-to-array mapping
+
+❌ No join entity
+
+❌ Ignoring extra attributes
+
+❌ Confusing with 1:M
+
+#### 🧠 Memory Trick
+
+> 👉 M:N = Needs third class ALWAYS
 
 ### 3️⃣ Aggregation (Weak HAS-A)
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20190930035513/Aggregation.jpeg)
