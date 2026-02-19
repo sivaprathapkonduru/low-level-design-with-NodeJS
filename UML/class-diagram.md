@@ -75,13 +75,13 @@
 >
 
 ### III. Payment Processing (Microservices)
-><pre>class PaymentService {
+
+<pre>class PaymentService {
   +processPayment(
     **in** orderId: string,       // Order details (input)
     **inout** payment: Payment    // Status updated: pending→success (modified)
   ): TransactionId
 }</pre>
->
 
 ### IV. User Authentication
 >
