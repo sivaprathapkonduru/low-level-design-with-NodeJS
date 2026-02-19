@@ -191,7 +191,7 @@ handleOrderCreated(order: any) {
 
 ### 🔥 Best Practices
 
-- Keep high-level view
+- Keep a high-level view
 
 - Use API Gateway
 
@@ -224,11 +224,6 @@ handleOrderCreated(order: any) {
 - Class Diagram → Code structure
 
 - Component Diagram → System structure
-
-Perfect 🔥 — this is exactly what interviewers expect:
-👉 **“Do you know component diagram symbols and what they mean?”**
-
-Here is a **clean GitHub-ready section** you can add to your `component-diagram.md` 👇
 
 ---
 
