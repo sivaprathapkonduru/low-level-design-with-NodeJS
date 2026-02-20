@@ -574,4 +574,4 @@ Represents **end user system**
 Code → Component → Node → Deployment
 ```
 
-[![Deployment Diagram](https://www.youtube.com/embed/WnMQ8HlmeXc?si=-HWdSxXYQgbjPS0X)](https://www.youtube.com/embed/WnMQ8HlmeXc?si=-HWdSxXYQgbjPS0X)
+[![Deployment Diagram](https://www.youtube.com/watch?v=WnMQ8HlmeXc&t=5960s)](https://www.youtube.com/watch?v=WnMQ8HlmeXc&t=5960s)
